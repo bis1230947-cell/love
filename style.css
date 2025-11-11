@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: black;
+}
+
+canvas {
+  display: block;
+}
+
+:root {
+  --matrix-txt: #ff4da6;
+}
+
+.Love__You {
+  color: var(--matrix-txt);
+  justify-content: center;
+  font-family: "Courier New", monospace;
+  display: flex;
+  min-height: 100vh;
+  padding: 1rem;
+}
