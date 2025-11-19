@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StyleHub - Premium Clothing Store</title>
+  <title>Shop - StyleHub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -16,8 +16,8 @@
       <div class="nav-wrapper">
         <a href="index.html" class="logo">StyleHub</a>
         <div class="nav-links">
-          <a href="index.html" class="nav-link active">Home</a>
-          <a href="products.html" class="nav-link">Shop</a>
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="products.html" class="nav-link active">Shop</a>
           <a href="products.html?category=men" class="nav-link">Men</a>
           <a href="products.html?category=women" class="nav-link">Women</a>
           <a href="products.html?category=accessories" class="nav-link">Accessories</a>
@@ -46,72 +46,84 @@
     <a href="cart.html" class="mobile-link">Cart</a>
   </div>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title">Discover Your Style</h1>
-      <p class="hero-subtitle">Premium clothing for the modern lifestyle</p>
-      <a href="products.html" class="btn btn-primary">Shop Now</a>
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title" id="pageTitle">All Products</h1>
+      <p class="page-subtitle">Discover our complete collection</p>
     </div>
   </section>
 
-  <!-- Categories Section -->
-  <section class="categories-section">
+  <!-- Products Section -->
+  <section class="products-section">
     <div class="container">
-      <h2 class="section-title">Shop by Category</h2>
-      <div class="categories-grid">
-        <a href="products.html?category=men" class="category-card">
-          <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=600&h=400&fit=crop')"></div>
-          <h3 class="category-name">Men's Collection</h3>
-        </a>
-        <a href="products.html?category=women" class="category-card">
-          <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=400&fit=crop')"></div>
-          <h3 class="category-name">Women's Collection</h3>
-        </a>
-        <a href="products.html?category=accessories" class="category-card">
-          <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?w=600&h=400&fit=crop')"></div>
-          <h3 class="category-name">Accessories</h3>
-        </a>
-      </div>
-    </div>
-  </section>
+      <div class="products-layout">
+        <!-- Filters Sidebar -->
+        <aside class="filters-sidebar">
+          <h3 class="filters-title">Filters</h3>
+          
+          <div class="filter-group">
+            <h4 class="filter-label">Category</h4>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input type="radio" name="category" value="all" checked>
+                <span>All Products</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="category" value="men">
+                <span>Men's Clothing</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="category" value="women">
+                <span>Women's Clothing</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="category" value="accessories">
+                <span>Accessories</span>
+              </label>
+            </div>
+          </div>
 
-  <!-- Featured Products Section -->
-  <section class="featured-section">
-    <div class="container">
-      <h2 class="section-title">Featured Products</h2>
-      <div class="products-grid" id="featuredProducts">
-        <!-- Products will be loaded here by JavaScript -->
-      </div>
-      <div class="text-center">
-        <a href="products.html" class="btn btn-secondary">View All Products</a>
-      </div>
-    </div>
-  </section>
+          <div class="filter-group">
+            <h4 class="filter-label">Price Range</h4>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input type="checkbox" class="price-filter" data-min="0" data-max="50">
+                <span>Under $50</span>
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="price-filter" data-min="50" data-max="100">
+                <span>$50 - $100</span>
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="price-filter" data-min="100" data-max="999">
+                <span>Over $100</span>
+              </label>
+            </div>
+          </div>
 
-  <!-- Features Section -->
-  <section class="features-section">
-    <div class="container">
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🚚</div>
-          <h3 class="feature-title">Free Shipping</h3>
-          <p class="feature-text">On orders over $100</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">↩️</div>
-          <h3 class="feature-title">Easy Returns</h3>
-          <p class="feature-text">30-day return policy</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔒</div>
-          <h3 class="feature-title">Secure Payment</h3>
-          <p class="feature-text">100% secure transactions</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">💬</div>
-          <h3 class="feature-title">24/7 Support</h3>
-          <p class="feature-text">Dedicated customer service</p>
+          <button class="btn btn-secondary" id="clearFilters">Clear Filters</button>
+        </aside>
+
+        <!-- Products Grid -->
+        <div class="products-content">
+          <div class="products-header">
+            <p class="products-count" id="productsCount">Showing all products</p>
+            <select class="sort-select" id="sortSelect">
+              <option value="default">Sort by: Default</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name">Name: A to Z</option>
+            </select>
+          </div>
+          
+          <div class="products-grid" id="productsGrid">
+            <!-- Products will be loaded here by JavaScript -->
+          </div>
+
+          <div class="no-products" id="noProducts" style="display: none;">
+            <p>No products found matching your criteria.</p>
+          </div>
         </div>
       </div>
     </div>
